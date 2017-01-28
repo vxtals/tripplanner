@@ -2,6 +2,10 @@
 
 > A Vue.js project
 
+## About vue-loader version.
+
+Fixed to version 10.1.0.
+
 ## Build Setup
 
 ``` bash
