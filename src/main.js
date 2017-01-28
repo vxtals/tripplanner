@@ -4,8 +4,11 @@ import Vue from 'vue'
 import App from './App'
 
 /* eslint-disable no-new */
+window.eventBus = new Vue()
+
 new Vue({
   el: '#app',
   template: '<App/>',
   components: { App }
 })
+
