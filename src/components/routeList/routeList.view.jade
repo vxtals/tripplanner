@@ -1,0 +1,18 @@
+.route-list
+  .list-card
+    .card-title.left.mdl-card__title
+      span Itinerario 
+    hr
+    .card-add
+      location-search-box(@location-set='enableAdd', @location-unset='disableAdd')
+      button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored(v-bind:disabled="addDisabled", @click='addLocation(previewLocation)')
+        i.material-icons add
+    hr
+    .card-list
+      ul.demo-list-icon.mdl-list(v-sortable="{ handle: '.handle', onEnd: reorder }")
+        li.mdl-list__item(v-for='(loc, index) in stageLocations', :key='loc.place_id')
+          span.mdl-list__item-primary-content
+            i.material-icons.mdl-list__item-icon.handle reorder
+            span.location-name {{ loc.formatted_address }}
+          i.material-icons.mdl-list__item-icon.show-location(@click='showLocation(index)') location_searching
+          i.material-icons.mdl-list__item-icon.delete-location(@click='removeLocation(index)') delete_forever
