@@ -1,30 +1,19 @@
 <template>
   <div id="app">
-    <div class='row'>
-      <div class='col-lg-3 center'>
-        <route-list></route-list>
-      </div>
-      <div class='col-lg-9'> 
-        <tripmap></tripmap>
-      </div>
-    </div>
+    <new-stage></new-stage>
   </div>
 </template>
 
 <script>
-  let $, vm
-  $ = require('jquery')
-  import Tripmap from './components/tripmap/Tripmap'
-  import RouteList from './components/routeList/RouteList'
+  let $ = require('jquery')
+  import NewStage from './components/newStage/NewStage'
 
   export default {
     name: 'app',
     components: {
-      Tripmap,
-      RouteList
+      NewStage
     },
     data () {
-      vm = this
       return {
       }
     },
@@ -35,12 +24,6 @@
         window.eventBus.$emit('maps_loaded')
         // Handle errors
       })
-    },
-    methods: {
-      updateLoc: function (newVal) {
-        vm.loc1 = newVal
-        window.eventBus.$emit('showOnMap', vm.loc1)
-      }
     }
   }
 </script>
