@@ -1,5 +1,5 @@
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  //font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -9,3 +9,19 @@
 .center{ text-align: center;}
 .left{ text-align: left;}
 .right{ text-align: right;}
+
+.wp100{
+	width: 100%;
+}
+
+.wp75{
+	width: 75%;
+}
+
+.wp50{
+	width: 50%;
+}
+
+.wp25{
+	width: 25%;
+}
