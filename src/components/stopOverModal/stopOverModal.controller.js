@@ -31,11 +31,12 @@ export default {
   methods: {
   	showModal: function () {
       vm.dialog.showModal()
-      setTimeout(function () {
-        vm.dialog.focus()
-      }, 5000)
   	},
-    closeModal: () => vm.dialog.close()
+    closeModal: () => vm.dialog.close(),
+    addPhoto: function () {
+      console.log('control1')
+      window.eventBus.$emit('app-msg', 'Photo service is not available')
+    }
   },
   watch: {
   	editable: function (newVal) {

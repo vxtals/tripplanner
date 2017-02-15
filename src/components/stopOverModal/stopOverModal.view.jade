@@ -2,7 +2,7 @@
   dialog#dialog.mdl-dialog
     .row
       .col-lg-offset-1.col-lg-11.stop-name
-        mdl-textfield.wp100(type='text', :floating-label='stopover.locationName', v-model='stopover.alias', required="required")
+        mdl-textfield.wp100(type='text', :floating-label='stopover.locationName', v-model='stopover.alias')
     .row
       .col-lg-offset-1.col-lg-5.time-group
         label Arrival time:
@@ -13,7 +13,7 @@
         mdl-textfield.time-picker.departure-time(type='time', v-model='stopover.departureTime')
     .row
       .col-lg-offset-1.col-lg-7
-        mdl-textfield.alias-name.wp100(type='text', floating-label='Comments', v-model='stopover.comments', textarea rows="6")
+        mdl-textfield.alias-name.wp100(type='text', floating-label='Comments', v-model='stopover.comments', textarea rows="8")
       .col-lg-4
         label Select type
         div
@@ -26,7 +26,7 @@
             li.mdl-menu-item ICON HERE
         label Add photos:
         div
-          button#select-type.mdl-button(type='button')
+          button#select-type.mdl-button(type='button', @click='addPhoto')
             i.material-icons.mdl-list__item-icon.handle add_to_photos
     .mdl-dialog__actions
       button.mdl-button(type='button', @click='closeModal') Save
