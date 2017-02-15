@@ -1,9 +1,11 @@
 import NewStage from './newStage/NewStage'
+import MsgToast from './msgToast/MsgToast'
 
 export default {
   name: 'app',
   components: {
-    NewStage
+    NewStage,
+    MsgToast
   },
   data () {
     return {

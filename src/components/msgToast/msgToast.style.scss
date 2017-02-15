@@ -1,0 +1,13 @@
+.msg-toast {
+	.mdl-js-snackbar 	{
+		background-color: #3949A3;
+		border-radius: 10px 10px 0 0;
+		.mdl-snackbar__text{
+			text-align: center;
+			width: 100%;
+		}
+		span{
+			display: none;
+		}
+	}
+}
