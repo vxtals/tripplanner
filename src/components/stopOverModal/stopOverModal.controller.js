@@ -24,6 +24,9 @@ export default {
   mounted: function () {
 	vm.dialog = document.querySelector('#dialog')
   vm.showModal()
+  var dialogBox = document.getElementById('stop-alias')
+  dialogBox.blur()
+  console.log(dialogBox)
   },
   created: function () {
   	window.eventBus.$on('editStopOver', vm.showModal)

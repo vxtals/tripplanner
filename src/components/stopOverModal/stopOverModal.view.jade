@@ -1,33 +1,42 @@
 .stopOverModal
   dialog#dialog.mdl-dialog
-    .row
-      .col-lg-offset-1.col-lg-11.stop-name
-        mdl-textfield.wp100(type='text', :floating-label='stopover.locationName', v-model='stopover.alias')
-    .row
-      .col-lg-offset-1.col-lg-5.time-group
-        label Arrival time:
-        span.line-wrapper
-          mdl-textfield.time-picker.arrival-time(type='time', v-model='stopover.arrivalTime')
-      .col-lg-5.time-group 
-        label Departure time: 
-        mdl-textfield.time-picker.departure-time(type='time', v-model='stopover.departureTime')
-    .row
-      .col-lg-offset-1.col-lg-7
-        mdl-textfield.alias-name.wp100(type='text', floating-label='Comments', v-model='stopover.comments', textarea rows="8")
-      .col-lg-4
-        label Select type
-        div
-          button#select-type.mdl-button(type='button')
-            span.type-text generic
-            i.material-icons.mdl-list__item-icon.handle location_on
-          ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect(for='select-type')
-            li.mdl-menu-item ICON HERE
-            li.mdl-menu-item ICON HERE
-            li.mdl-menu-item ICON HERE
-        label Add photos:
-        div
-          button#select-type.mdl-button(type='button', @click='addPhoto')
-            i.material-icons.mdl-list__item-icon.handle add_to_photos
+    .mdl-dialog__content(ref='dialog')
+      form
+        .row
+          .col-lg-offset-1.col-lg-11.stop-name
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.wp100
+              input#stop-alias.mdl-textfield__input(type='text', v-model='stopover.alias')
+              label.mdl-textfield__label {{ stopover.locationName }}
+            //- mdl-textfield.wp100(type='text', :floating-label='stopover.locationName', v-model='stopover.alias')
+        .row
+          .col-lg-offset-1.col-lg-5.time-group
+            label Arrival time:
+            span.line-wrapper
+              .mdl-textfield.mdl-js-textfield
+                input.mdl-textfield__input.time-picker.arrival-time(type='time', v-model='stopover.arrivalTime')
+          .col-lg-5.time-group 
+            label Departure time:
+            .mdl-textfield.mdl-js-textfield
+              input.mdl-textfield__input.time-picker.departure-time(type='time', v-model='stopover.departureTime')
+        .row
+          .col-lg-offset-1.col-lg-7
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              textarea.mdl-textfield__input.alias-name.wp100(type='text', floating-label='Comments', v-model='stopover.comments', rows="8")
+              label.mdl-textfield__label() Comments
+          .col-lg-4
+            label Select type
+            div
+              button#select-type.mdl-button(type='button')
+                span.type-text generic
+                i.material-icons.mdl-list__item-icon.handle location_on
+              ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect(for='select-type')
+                li.mdl-menu-item ICON HERE
+                li.mdl-menu-item ICON HERE
+                li.mdl-menu-item ICON HERE
+            label Add photos:
+            div
+              button#select-type.mdl-button(type='button', @click='addPhoto')
+                i.material-icons.mdl-list__item-icon.handle add_to_photos
     .mdl-dialog__actions
       button.mdl-button(type='button', @click='closeModal') Save
       button.mdl-button(type='button', @click='closeModal') Discard

@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './components/App'
-import VueMdl from 'vue-mdl'
+// import VueMdl from 'vue-mdl'
 import Sortable from 'sortablejs'
 
 window._ = require('lodash')
@@ -17,7 +17,7 @@ Vue.directive('sortable', {
   }
 })
 
-Vue.use(VueMdl)
+// Vue.use(VueMdl)
 
 /* eslint-disable no-new */
 // New vue instance to be used as event bus
