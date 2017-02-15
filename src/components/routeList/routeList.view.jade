@@ -14,5 +14,8 @@
           span.mdl-list__item-primary-content
             i.material-icons.mdl-list__item-icon.handle reorder
             span.location-name {{ loc.formatted_address }}
-          i.material-icons.mdl-list__item-icon.show-location(@click='showLocation(index)') location_searching
-          i.material-icons.mdl-list__item-icon.delete-location(@click='removeLocation(index)') delete_forever
+          i.material-icons.mdl-list__item-icon.show-location#ttcenter(@click='showLocation(index)') location_searching
+          i.material-icons.mdl-list__item-icon.edit-stopover#ttedit(@click='editStopOver(index)') mode_edit
+          mdl-tooltip(target='ttedit') Edit
+          mdl-tooltip(target='ttcenter') Center on Map
+  stop-over-modal

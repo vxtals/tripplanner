@@ -1,4 +1,5 @@
 import LocationSearchBox from '../locationSearchBox/LocationSearchBox'
+import StopOverModal from '../stopOverModal/StopOverModal'
 let vm
 
 export default {
@@ -30,6 +31,9 @@ export default {
   		vm.stageLocations.splice(index, 1)
   		vm.updateLocations()
   	},
+    editStopOver: function (index) { 
+      window.eventBus.$emit('editStopOver', vm.stageLocations[index])
+    },
   	showLocation: function (index) {
   		window.eventBus.$emit('showOnMap', vm.stageLocations[index].geometry.location)
   	},
@@ -43,6 +47,7 @@ export default {
     }
   },
   components: {
-  	LocationSearchBox
+  	LocationSearchBox,
+    StopOverModal
   }
 }

@@ -49,8 +49,13 @@
 		text-overflow: ellipsis;
 		overflow: hidden;
 	}
-	.delete-location:hover{
+	.delete-location:hover{// BORRAR
 		color: #FE6363;
+		cursor: pointer;
+		font-size: 26px;
+	}
+	.edit-stopover:hover{
+		color: #3F51B5;
 		cursor: pointer;
 		font-size: 26px;
 	}
