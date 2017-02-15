@@ -1,0 +1,37 @@
+.stopOverModal {
+	.mdl-dialog{
+		width: 30vw;
+	}git
+	.stop-name{
+		text-align: left
+	}
+	.time-group{
+		text-align: left;
+		label{
+			margin-right: 10px;
+		}
+	}
+	.time-picker{
+		width: 75px;
+	}
+	.line-wrapper{
+		display: inline-block;
+		width: 98px;
+	}
+	#select-type{
+		min-width: 65px;
+		width: 65px;
+		height: 65px;
+		padding: 0;
+		background-color: #f2f2f2;
+	}
+	#select-type:hover{
+		background-color: #d9d9d9;
+	}
+	.type-text{
+		text-transform: none;
+		display: block;
+		font-size: 15px;
+		line-height: 15px;
+	}
+}
