@@ -1,12 +1,42 @@
+/* XS Small devices (tablets, 768px and less) */
+@media (max-width: 900px) {	
+	.list-card{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		min-height: 100vh;
+	}
+	.col-xs-12{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/* SM Small devices (tablets, 768px and up) */
+@media (min-width: 900px) {	
+
+}
+
+/* MD Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {	
+
+}
+
+/* LG Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {	
+
+}
+
 .list-card {
   background: #fff;
   border-radius: 2px;
   display: inline-block;
   // height: 300px;
   min-height: 200px;
-  height: 800px;
+  //height: 800px;
   position: relative;
-  width: 350px;
+  //width: 350px;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   box-shadow: 0 0 5px rgba(0,0,0,0.25), 0 4px 20px rgba(0,0,0,0.22);
   hr{

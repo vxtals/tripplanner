@@ -1,7 +1,37 @@
 .stopOverModal {
-	.mdl-dialog{
-		width: 30vw;
+
+	/* XS Small devices (tablets, 768px and less) */
+	@media (max-width: 768px) {	
+		.mdl-dialog{
+			width: 100vw;
+			min-height: 100vh;
+			position: absolute;
+			top: 0;
+		}
 	}
+
+	/* SM Small devices (tablets, 768px and up) */
+	@media (min-width: 768px) {	
+		.mdl-dialog{
+			width: 80vw;
+		}
+	}
+
+	/* MD Medium devices (desktops, 992px and up) */
+	@media (min-width: 992px) {	
+		.mdl-dialog{
+			width: 60vw;
+		}
+	}
+
+	/* LG Large devices (large desktops, 1200px and up) */
+	@media (min-width: 1200px) {	
+		.mdl-dialog{
+			width: 40vw;
+		}
+	}
+
+	// ALL
 	.stop-name{
 		text-align: left;
 	}

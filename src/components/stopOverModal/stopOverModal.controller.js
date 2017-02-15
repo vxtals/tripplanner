@@ -24,8 +24,6 @@ export default {
   mounted: function () {
 	vm.dialog = document.querySelector('#dialog')
   vm.showModal()
-  var dialogBox = document.getElementById('stop-alias')
-  dialogBox.blur()
   console.log(dialogBox)
   },
   created: function () {
@@ -34,6 +32,7 @@ export default {
   methods: {
   	showModal: function () {
       vm.dialog.showModal()
+      document.getElementById('stop-alias').blur()
   	},
     closeModal: () => vm.dialog.close(),
     addPhoto: function () {

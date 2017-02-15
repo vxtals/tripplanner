@@ -1,9 +1,38 @@
+/* XS Small devices (tablets, 768px and less) */
+@media (max-width: 900px) {
+	#app{
+		padding-top: 0;
+	}
+}
+
+/* SM Small devices (tablets, 768px and up) */
+@media (min-width: 900px) {
+	#app{
+		padding-top: 20px;
+	}
+}
+
+/* MD Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	#app{
+		padding-top: 40px;
+	}
+}
+
+/* LG Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	#app{
+		padding-top: 60px;
+	}
+}
+
 #app {
+	/* XS Small devices (tablets, 768px and less) */
+
   //font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  padding-top: 60px;
 }
 
 .center{ text-align: center;}
