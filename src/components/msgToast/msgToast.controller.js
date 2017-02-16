@@ -13,10 +13,11 @@ export default {
     vm.snackbar = document.querySelector('.mdl-js-snackbar')
   },
   methods: {
-    showMsg: function (msg) {
+    showMsg: function (msg, timeout) {
       var data = {
         message: msg
       }
+      if (!!timeout) data.timeout = timeout
       vm.snackbar.MaterialSnackbar.showSnackbar(data)
     }
   }
