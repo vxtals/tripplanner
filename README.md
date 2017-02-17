@@ -1,6 +1,10 @@
 # tripplanner
 
-> A Vue.js project
+> TripPlanner is intended to be a web page to manage a road trip data, improving features offered by Google Maps 'My Maps'. 
+
+## Development requirements
+
+Developed using Node v6.9.5 and NPM 3.10.10. 
 
 ## About vue-loader version.
 
@@ -10,7 +14,7 @@ Fixed to version 10.1.0.
 
 ``` bash
 # install dependencies
-npm install
+npm install 
 
 # serve with hot reload at localhost:8080
 npm run dev
