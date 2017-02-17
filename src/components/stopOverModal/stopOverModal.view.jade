@@ -3,28 +3,28 @@
     .mdl-dialog__content(ref='dialog')
       form
         .row
-          .col-lg-offset-1.col-lg-11.stop-name
+          .col-xs-offset-1.col-xs-11.stop-name
             .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.wp100
               input#stop-alias.mdl-textfield__input(type='text', v-model='stopover.alias')
               label.mdl-textfield__label {{ stopover.locationName }}
             //- mdl-textfield.wp100(type='text', :floating-label='stopover.locationName', v-model='stopover.alias')
         .row
-          .col-lg-offset-1.col-lg-5.time-group
+          .col-xs-offset-1.col-xs-5.time-group
             label Arrival time:
             span.line-wrapper
               .mdl-textfield.mdl-js-textfield
                 input.mdl-textfield__input.time-picker.arrival-time(type='time', v-model='stopover.arrivalTime')
-          .col-lg-5.time-group 
+          .col-xs-5.time-group 
             label Departure time:
             span.line-wrapper
               .mdl-textfield.mdl-js-textfield
                 input.mdl-textfield__input.time-picker.departure-time(type='time', v-model='stopover.departureTime')
         .row
-          .col-lg-offset-1.col-lg-7
+          .col-xs-offset-1.col-xs-7
             .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.comments
               textarea.mdl-textfield__input.alias-name.wp100(type='text', floating-label='Comments', v-model='stopover.comments', rows="8")
               label.mdl-textfield__label() Comments
-          .col-lg-4
+          .col-xs-4
             label Select type
             div
               button#select-type.mdl-button(type='button', @click='setType')

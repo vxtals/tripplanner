@@ -15,7 +15,7 @@ export default {
     // Loading google maps js API. Emitting event.
     // Add location here
     $.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyC8zPnBx0QlrQ5V4tMteCzgfN_vXfFBagc&libraries=places', function () {
-      window.eventBus.$emit('maps_loaded')
+      window.eventBus.$emit('google-maps-loaded')
       // Handle errors
     })
   }

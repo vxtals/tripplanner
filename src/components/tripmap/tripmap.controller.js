@@ -1,128 +1,131 @@
-var vm, map, infowindow, searchBox, dirService, dirDisplay
-var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+let vm, map, infowindow, searchBox, dirService, dirDisplay, previewMarker
+let staticMarkers = []
+let locations = []
 export default {
   name: 'trip-map',
   data () {
-    vm = this
     return {
-      staticMarkers: [],
-      locations: []
     }
   },
   created: function () {
-    window.eventBus.$on('maps_loaded', vm.initMap)
-    window.eventBus.$on('showOnMap', function (location) {
-      map.setCenter(location)
-      vm.createPreviewMarker(location)
-    })
-    window.eventBus.$on('hideOnMap', function (location) {
-      if (!!vm.previewMarker) vm.previewMarker.setMap(null)
-    })
-    window.eventBus.$on('updateLocations', function (stageLocations) {
-      if (!!stageLocations) {
-        vm.locations = stageLocations
-        vm.clearMarkers()
-        vm.locations.forEach(function (location) {
-          vm.addMarker(location.geometry.location);
-        });
-        if (stageLocations.length > 1) vm.calculateDirections(vm.locations)
-      }
-    })
-    window.eventBus.$on('reload-map', function () {
-        reloadMap()
-    })
-    var doit
-    $(window).resize(function(){
-      clearTimeout(doit)
-      doit = setTimeout(function() {
-        reloadMap()
-      }, 100);
-    })
-
-  },
-  events: {
-    'maps_loaded': function () {
-      vm.initMap()
-    }
-  },
-  methods: {
-    initMap: function () {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 41.955917, lng: -87.64741600000002},
-        zoom: 6
-      });
-      dirService = new google.maps.DirectionsService
-      dirDisplay = new google.maps.DirectionsRenderer({
-        map: map
-      })
-
-    },
-    createPreviewMarker: function (location) {
-      if (!!vm.previewMarker) vm.previewMarker.setMap(null)
-        vm.previewMarker = new google.maps.Marker({
-          map: map,
-          position: location
-        });
-    },
-    clearMarkers: function () {
-      vm.staticMarkers.forEach(function (marker) {
-        marker.setMap(null)
-      })
-      vm.staticMarkers = []
-    },
-    addMarker: function (location) {
-      let newMarker = new google.maps.Marker({
-        map: map,
-        position: location,
-        label: vm.staticMarkers.length.toString(),
-        color: 'blue'
-      });
-      vm.staticMarkers.push(newMarker)
-    },
-    calculateDirections: function (locations) {
-      let waypoints = []
-      for(var i = 1; i < vm.locations.length -1; i++){
-        waypoints[i - 1] = {
-          location: vm.locations[i].geometry.location,
-          stopover: true
-        }
-      }
-      
-      let dirRequest = {
-        avoidFerries: true,
-        avoidHighways: false,
-        avoidTolls:  false,
-        destination: vm.locations[vm.locations.length - 1].geometry.location,
-        drivingOptions: {
-          departureTime: new Date(),
-          trafficModel: google.maps.TrafficModel.BEST_GUESS
-        },
-        optimizeWaypoints: false,
-        origin: vm.locations[0].geometry.location,
-        provideRouteAlternatives: false,
-        transitOptions: {},
-        travelMode: google.maps.TravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.METRIC,
-        waypoints: waypoints
-
-      }
-      dirService.route(dirRequest, function (directionResult, directionsStatus) {
-        if (directionsStatus === google.maps.DirectionsStatus.OK) {
-          dirDisplay.setDirections(directionResult);
-        } else {
-          window.alert('Directions request failed due to ' + status);
-        }
-
-      })
-    }
+    window.eventBus.$on('google-maps-loaded', initMap)
+    window.eventBus.$on('center-and-show', centerAndShow)
+    window.eventBus.$on('remove-preview-marker', removePreviewMarker)
+    window.eventBus.$on('update-location-markers', updateLocationMarkers)
+    window.eventBus.$on('reload-map', reloadMap)
+    registerResizeEvent()
   }
 }
 
-//PRIVETE FUNCTIONS
+//PRIVATE FUNCTIONS
+function initMap (){
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 41.955917, lng: -87.64741600000002},
+    zoom: 6
+  });
+  dirService = new google.maps.DirectionsService
+  dirDisplay = new google.maps.DirectionsRenderer({
+    map: map
+  })   
+  google.maps.event.addListener(map, 'click', function(event) {
+   console.log(event);
+  });
+}
+
+function createPreviewMarker (location) {
+  if (!!previewMarker) previewMarker.setMap(null)
+    previewMarker = new google.maps.Marker({
+      map: map,
+      position: location
+    });
+}
 
 function reloadMap () {
   setTimeout(function() {
-    console.log('reload')
     google.maps.event.trigger(map,'resize')
   }, 1001);
 }
+
+function registerResizeEvent () {    
+  var resize
+  $(window).resize(function(){
+    clearTimeout(resize)
+    resize = setTimeout(function() {
+      reloadMap()
+    }, 100);
+  })
+}
+
+function centerAndShow (location) {
+  map.setCenter(location)
+  createPreviewMarker(location)
+}
+
+function removePreviewMarker () {
+  if (!!previewMarker) previewMarker.setMap(null)
+}
+
+function updateLocationMarkers (stageLocations) {
+  if (!!stageLocations) {
+    locations = stageLocations
+    clearMarkers()
+    locations.forEach(function (location) {
+      addMarker(location.geometry.location);
+    });
+    if (stageLocations.length > 1) calculateDirections(locations)
+  }
+}
+
+function clearMarkers () {
+  staticMarkers.forEach(function (marker) {
+    marker.setMap(null)
+  })
+  staticMarkers = []
+}
+
+function addMarker (location) {
+  let newMarker = new google.maps.Marker({
+    map: map,
+    position: location,
+    label: staticMarkers.length.toString(),
+    color: 'blue'
+  });
+  staticMarkers.push(newMarker)
+}
+
+function calculateDirections (locations) {
+    let waypoints = []
+    for(var i = 1; i < locations.length -1; i++){
+      waypoints[i - 1] = {
+        location: locations[i].geometry.location,
+        stopover: true
+      }
+    }
+    
+    let dirRequest = {
+      avoidFerries: true,
+      avoidHighways: false,
+      avoidTolls:  false,
+      destination: locations[locations.length - 1].geometry.location,
+      drivingOptions: {
+        departureTime: new Date(),
+        trafficModel: google.maps.TrafficModel.BEST_GUESS
+      },
+      optimizeWaypoints: false,
+      origin: locations[0].geometry.location,
+      provideRouteAlternatives: false,
+      transitOptions: {},
+      travelMode: google.maps.TravelMode.DRIVING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      waypoints: waypoints
+
+    }
+    dirService.route(dirRequest, function (directionResult, directionsStatus) {
+      if (directionsStatus === google.maps.DirectionsStatus.OK) {
+        dirDisplay.setDirections(directionResult);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+
+    })
+  }

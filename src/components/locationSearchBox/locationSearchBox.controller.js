@@ -1,38 +1,39 @@
 let vm, input, searchBox
+let stringSet = false
 
 export default {
   name: 'location-search-box',
   data () {
     vm = this
     return {
-      searchString: null,
-      stringSet: false
+      searchString: null
     }
   },
   props: ['locations'],
   created: function () {
-    window.eventBus.$on('maps_loaded', vm.initLocationSearch)
-  },
-  methods: {
-    initLocationSearch: function () {
-      input = document.getElementById('loc-input')
-      searchBox = new google.maps.places.SearchBox(input)
-      searchBox.addListener('places_changed', vm.setPlace)
-    },
-    setPlace: function () {
-      vm.stringSet = true
-      vm.$emit('location-set', searchBox.getPlaces())
-    },
-    toggleAlert: function () {
-      vm.showRight = !vm.showRight
-    }
+    window.eventBus.$on('google-maps-loaded', initLocationSearch)
+    window.eventBus.$on('clear-location-search-box', clearLocationSearchBox)
   },
   watch: {
     searchString: function (val) {
-      if(vm.stringSet) vm.$emit('location-unset', val)
+      if(stringSet) vm.$emit('location-unset', val)
     }
-  },
-  components: {
-    
   }
+}
+
+// PRIVATE FUNCTIONS
+
+function initLocationSearch () {
+  input = document.getElementById('loc-input')
+  searchBox = new google.maps.places.SearchBox(input)
+  searchBox.addListener('places_changed', setPlace)
+}
+
+function clearLocationSearchBox () {
+  vm.searchString = null
+}
+
+function setPlace () {
+  stringSet = true
+  vm.$emit('location-set', searchBox.getPlaces())
 }

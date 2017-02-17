@@ -12,7 +12,7 @@
           button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored(v-bind:disabled="addDisabled", @click='addLocation(previewLocation)')
             i.material-icons add
     hr
-    .card-list
+    .stopover-list
       ul.demo-list-icon.mdl-list(v-sortable="{ handle: '.handle', onEnd: reorder }")
         li.mdl-list__item.row(v-for='(loc, index) in stageLocations', :key='loc.place_id')
           .col-lg-9.col-md-9.col-sm-9.col-xs-9
