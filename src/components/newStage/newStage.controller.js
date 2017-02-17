@@ -1,5 +1,6 @@
 import RouteList from '../routeList/RouteList'
 import TripMap from '../tripMap/TripMap'
+let vm
 
 export default {
   name: 'new-stage',
@@ -8,14 +9,17 @@ export default {
     TripMap
   },
   data () {
+    vm = this
     return {
-      removeMsg: 'This is a dummy component, remove it.'
+      showList: true
     }
   },
   methods: {
-    updateLoc: function (newVal) {
-      vm.loc1 = newVal
-      window.eventBus.$emit('showOnMap', vm.loc1)
+    switchRouteList: function () {
+      vm.showList = !vm.showList
+      if(window.innerWidth > 900){
+        window.eventBus.$emit('reload-map')
+      }
     }
   }
 }

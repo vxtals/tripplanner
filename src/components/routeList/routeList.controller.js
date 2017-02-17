@@ -44,6 +44,9 @@ export default {
     },
     updateLocations: function () {
   		window.eventBus.$emit('updateLocations', vm.stageLocations)
+    },
+    hideRouteList: function () {
+      vm.$emit('hide-route-list')
     }
   },
   components: {

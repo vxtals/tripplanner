@@ -1,101 +1,86 @@
-/* XS Small devices (tablets, 768px and less) */
-@media (max-width: 900px) {	
-	.list-card{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		min-height: 100vh;
+.route-list{
+
+	/* XS Small devices (tablets, 768px and less) */
+	@media (max-width: 900px) { 
+		height: 100vh;
 	}
-	.col-xs-12{
-		padding-left: 0;
-		padding-right: 0;
+	/* SM Small devices (tablets, 768px and up) */
+	@media (min-width: 900px) {
+
 	}
-}
+	/* LG Large devices (large desktops, 1200px and up) */
+	@media (min-width: 1200px) {
 
-/* SM Small devices (tablets, 768px and up) */
-@media (min-width: 900px) {	
+	}
 
-}
-
-/* MD Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {	
-
-}
-
-/* LG Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {	
-
-}
-
-.list-card {
-  background: #fff;
-  border-radius: 2px;
-  display: inline-block;
-  // height: 300px;
-  min-height: 200px;
-  //height: 800px;
-  position: relative;
-  //width: 350px;
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  box-shadow: 0 0 5px rgba(0,0,0,0.25), 0 4px 20px rgba(0,0,0,0.22);
-  hr{
-  	margin: 0;
-  }
-}
-.card-title{
-	height: 60px;
-	font-size: 20px;
-	text-transform: uppercase;
-	font-family: 'Roboto', sans-serif;
-	padding: 10px 5px 5px 10px;
-	color: white;
-	background-color: #3F51B5;
-}
-.card-add{
-	padding-left: 5px;
-	.locationSearchBox{
+	.list-card {
+		background: #fff;
+		border-radius: 2px;
 		display: inline-block;
-		width: 250px;
-		margin-right: 15px;
+		width: 100%;
+		position: relative;
+		overflow-y: auto;
+		overflow-x: hidden;
+		transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		box-shadow: 0 0 5px rgba(0,0,0,0.25), 0 4px 20px rgba(0,0,0,0.22);
+		hr{
+			margin: 0;
+		}
 	}
-	.mdl-button{
-		display: inline-block;
-		width: 40px;
-		min-width: 40px;
-		height: 40px;
-	}
-}
-.card-list{
-	overflow-y: auto;
-	height: 667px;
-	.mdl-list__item .mdl-list__item-primary-content .mdl-list__item-icon{
-		margin-right: 5px;
-	}
-	.location-name{
-		white-space: pre;
-		width: 235px;
-		text-align: left;
-		text-overflow: ellipsis;
-		overflow: hidden;
-	}
-	.delete-location:hover{// BORRAR
-		color: #FE6363;
-		cursor: pointer;
-		font-size: 26px;
-	}
-	.edit-stopover:hover{
-		color: #3F51B5;
-		cursor: pointer;
-		font-size: 26px;
-	}
-	.show-location:hover{
-		color: #3F51B5;
-		cursor: pointer;
-		font-size: 26px;
-	}
-}
 
-.w240{
-	width: 240px;
+	.card-title{
+		height: 60px;
+		font-size: 20px;
+		text-transform: uppercase;
+		font-family: 'Roboto', sans-serif;
+		padding: 10px 5px 5px 10px;
+		color: white;
+		background-color: #3F51B5;
+		justify-content: space-between;
+		button>i{
+			color: white;
+			font-size: 24px;
+		}
+	}
+
+
+	.card-search{
+		.mdl-button{
+			width: 45px;
+			min-width: 45px;
+			height: 45px;
+		}
+		.add-button{
+			line-height: 65px;
+			padding-left: 0;
+		}
+	}
+
+	.card-list{
+		overflow-y: auto;
+		.row{
+			width: 100%;
+			padding-bottom: 0;
+		}
+		.location-name{
+			white-space: nowrap;
+			text-align: left;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			display: inline;
+		}
+		.handle{
+			margin-right: 10px;
+		}
+		.edit-stopover:hover{
+			color: #3F51B5;
+			cursor: pointer;
+			font-size: 26px;
+		}
+		.show-location:hover{
+			color: #3F51B5;
+			cursor: pointer;
+			font-size: 26px;
+		}
+	}
 }

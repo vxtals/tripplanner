@@ -1,5 +1,4 @@
 .stopOverModal {
-
 	/* XS Small devices (tablets, 768px and less) */
 	@media (max-width: 768px) {	
 		.mdl-dialog{
@@ -47,6 +46,9 @@
 	.line-wrapper{
 		display: inline-block;
 		width: 98px;
+	}
+	.comments{
+		width: 100%;
 	}
 	#select-type{
 		min-width: 65px;

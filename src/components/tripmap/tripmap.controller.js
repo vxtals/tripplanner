@@ -27,7 +27,17 @@ export default {
         });
         if (stageLocations.length > 1) vm.calculateDirections(vm.locations)
       }
-  })
+    })
+    window.eventBus.$on('reload-map', function () {
+        reloadMap()
+    })
+    var doit
+    $(window).resize(function(){
+      clearTimeout(doit)
+      doit = setTimeout(function() {
+        reloadMap()
+      }, 100);
+    })
 
   },
   events: {
@@ -106,4 +116,13 @@ export default {
       })
     }
   }
+}
+
+//PRIVETE FUNCTIONS
+
+function reloadMap () {
+  setTimeout(function() {
+    console.log('reload')
+    google.maps.event.trigger(map,'resize')
+  }, 1001);
 }

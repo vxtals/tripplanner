@@ -16,23 +16,24 @@
                 input.mdl-textfield__input.time-picker.arrival-time(type='time', v-model='stopover.arrivalTime')
           .col-lg-5.time-group 
             label Departure time:
-            .mdl-textfield.mdl-js-textfield
-              input.mdl-textfield__input.time-picker.departure-time(type='time', v-model='stopover.departureTime')
+            span.line-wrapper
+              .mdl-textfield.mdl-js-textfield
+                input.mdl-textfield__input.time-picker.departure-time(type='time', v-model='stopover.departureTime')
         .row
           .col-lg-offset-1.col-lg-7
-            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.comments
               textarea.mdl-textfield__input.alias-name.wp100(type='text', floating-label='Comments', v-model='stopover.comments', rows="8")
               label.mdl-textfield__label() Comments
           .col-lg-4
             label Select type
             div
-              button#select-type.mdl-button(type='button')
+              button#select-type.mdl-button(type='button', @click='setType')
                 span.type-text generic
                 i.material-icons.mdl-list__item-icon.handle location_on
-              ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect(for='select-type')
-                li.mdl-menu-item ICON HERE
-                li.mdl-menu-item ICON HERE
-                li.mdl-menu-item ICON HERE
+              //- ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect(for='select-type')
+              //-   li.mdl-menu-item ICON HERE
+              //-   li.mdl-menu-item ICON HERE
+              //-   li.mdl-menu-item ICON HERE
             label Add photos:
             div
               button#select-type.mdl-button(type='button', @click='addPhoto')

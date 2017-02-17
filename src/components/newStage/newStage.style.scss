@@ -1,3 +1,85 @@
 .newStage {
+	/* XS Small devices (tablets, 768px and less) */
+	@media (max-width: 900px) { 
+		.route-list-container{
+			position: absolute;
+			width: 100vw;
+			z-index: 2;
+			padding-left: 0;
+			padding-right: 0;
+			top: 0;
+			left: 0;
+		}
+		.map-container{
+			position: absolute;
+			width: 100vw;
+			z-index: 0;
+			padding-left: 0;
+			padding-right: 0;
+			top: 0;
+			left: 0;
+		}
+		.list-button{
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			padding-left: 0;
+			button{
+				min-width: 60px;
+				width: 60px;
+				height: 60px;
+				border-radius: 0 10px 10px 0;
+				color: #FBFBFE;
+				background-color: #3F51B5;
+			}
+		}
+	}
+	/* SM Small devices (tablets, 768px and up) */
+	@media (min-width: 900px) {
+		.list-button{
+			position: absolute;
+			top: 40px;
+			z-index: 0;
+			padding-left: 0;
+			button{
+				min-width: 60px;
+				width: 60px;
+				height: 60px;
+				border-radius: 0 10px 10px 0;
+				color: #FBFBFE;
+				background-color: #3F51B5;
+			}
+			visibility: visible;
+			opacity: 1;
+			transition: visibility 1s, opacity 1s linear;
+		}
+		.expanded-map #map{
+			width: 89vw;
+			transition: width 1s linear;
+		}
+
+		.map-container #map{
+			transition: width 1s linear;
+		}
+	}
+	/* LG Large devices (large desktops, 1200px and up) */
+	@media (min-width: 1200px) {
+
+	}
+	.route-list-container{
+		z-index: 2;
+		transition: transform 1s linear;
+		display: block;
+	}
+	.hide-list{
+		transform: translateX(-100%);
+		transition: transform 1s linear;
+	}
+	.hide-button{
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 2s, opacity 2s linear;
+	}
 
 }

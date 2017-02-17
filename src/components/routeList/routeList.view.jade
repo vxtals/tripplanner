@@ -1,21 +1,28 @@
 .route-list
-  .list-card
+  .list-card.full-height
     .card-title.left.mdl-card__title
-      span Itinerario 
+      span Itinerario
+      button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored(@click='hideRouteList')
+            i.material-icons menu
     hr
-    .card-add
-      location-search-box(@location-set='enableAdd', @location-unset='disableAdd')
-      button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored(v-bind:disabled="addDisabled", @click='addLocation(previewLocation)')
-        i.material-icons add
+    .card-search.row
+        .col-lg-offset-1.col-lg-7.col-md-offset-1.col-md-8.col-sm-8.col-xs-offset-1.col-xs-8
+          location-search-box(@location-set='enableAdd', @location-unset='disableAdd')
+        .col-lg-3.col-md-3.col-sm-3.col-xs-2.add-button
+          button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored(v-bind:disabled="addDisabled", @click='addLocation(previewLocation)')
+            i.material-icons add
     hr
     .card-list
       ul.demo-list-icon.mdl-list(v-sortable="{ handle: '.handle', onEnd: reorder }")
-        li.mdl-list__item(v-for='(loc, index) in stageLocations', :key='loc.place_id')
-          span.mdl-list__item-primary-content
-            i.material-icons.mdl-list__item-icon.handle reorder
-            span.location-name {{ loc.formatted_address }}
-          i.material-icons.mdl-list__item-icon.show-location#ttcenter(@click='showLocation(index)') location_searching
-          i.material-icons.mdl-list__item-icon.edit-stopover#ttedit(@click='editStopOver(index)') mode_edit
-          mdl-tooltip(target='ttedit') Edit
-          mdl-tooltip(target='ttcenter') Center on Map
+        li.mdl-list__item.row(v-for='(loc, index) in stageLocations', :key='loc.place_id')
+          .col-lg-9.col-md-9.col-sm-9.col-xs-9
+            span.mdl-list__item-primary-content
+              i.material-icons.mdl-list__item-icon.handle reorder
+              span.location-name {{ loc.formatted_address }}
+          .col-lg-1.col-md-1.col-sm-1.col-xs-1
+            .material-icons.mdl-list__item-icon.show-location#ttcenter(@click='showLocation(index)') location_searching
+            .mdl-tooltip(data-mdl-for='ttcenter') Center on Map
+          .col-lg-2.col-md-2.col-sm-2.col-xs-2
+            .material-icons.mdl-list__item-icon.edit-stopover#ttedit(@click='editStopOver(index)') mode_edit
+            .mdl-tooltip(data-mdl-for='ttedit') Edit
   stop-over-modal

@@ -23,8 +23,6 @@ export default {
   },
   mounted: function () {
 	vm.dialog = document.querySelector('#dialog')
-  vm.showModal()
-  console.log(dialogBox)
   },
   created: function () {
   	window.eventBus.$on('editStopOver', vm.showModal)
@@ -38,6 +36,10 @@ export default {
     addPhoto: function () {
       console.log('control1')
       window.eventBus.$emit('app-msg', 'Photo service is not available')
+    },
+    setType: function () {
+      console.log('control1')
+      window.eventBus.$emit('app-msg', 'Type selection is not available')
     }
   },
   watch: {
