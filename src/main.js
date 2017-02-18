@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './components/App'
-import routes from './components/routes.js'
+import routes from './routes.js'
 // import VueMdl from 'vue-mdl'
 import Sortable from 'sortablejs'
 
