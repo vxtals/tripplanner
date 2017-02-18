@@ -1,7 +1,9 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import App from './components/App'
+import routes from './components/routes.js'
 // import VueMdl from 'vue-mdl'
 import Sortable from 'sortablejs'
 
@@ -17,15 +19,20 @@ Vue.directive('sortable', {
   }
 })
 
-// Vue.use(VueMdl)
+Vue.use(VueRouter)
 
 /* eslint-disable no-new */
 // New vue instance to be used as event bus
 // It must be before Vue app instantation
 window.eventBus = new Vue()
 
+const router = new VueRouter({
+  routes: routes
+})
+
 new Vue({
   el: '#app',
+  router: router,
   template: '<App/>',
   components: { App }
 })
