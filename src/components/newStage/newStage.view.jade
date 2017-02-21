@@ -4,7 +4,7 @@
       route-list(@hide-route-list='switchRouteList')
     .list-button(:class='{"hide-button" : showList}')
       button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored(@click='switchRouteList')
-        i.material-icons menu
+        i.material-icons keyboard_arrow_right
     .map-container.col-lg-9.col-md-8.col-sm-8(:class='{"expanded-map" : !showList}')
       trip-map
     //- .map-container(:class='[showList ? "col-lg-9 col-md-8 col-sm-8" : "col-sm-offset-1 col-lg-11 col-md-11 col-sm-11"]')

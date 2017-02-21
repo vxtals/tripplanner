@@ -10,14 +10,15 @@
 /* SM Small devices (tablets, 768px and up) */
 @media (min-width: 900px) {
 	.full-height{
-	  height: -webkit-calc(100vh - 80px);
-	  height:    -moz-calc(100vh - 80px);
-	  height:         calc(100vh - 80px);
+	  height: -webkit-calc(100vh - 95px);
+	  height:    -moz-calc(100vh - 95px);
+	  height:         calc(100vh - 95px);
 	}
-}
-
-/* LG Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+	.container-fluid{
+		padding-top: 84px;
+		// padding-bottom: 10px;
+		position: relative;
+	}
 }
 
 
