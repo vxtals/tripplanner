@@ -1,0 +1,11 @@
+/* XS Small devices (tablets, 768px and less) */
+@media (max-width: 900px) { 
+	.trip-footer {
+		display: none;
+	}
+}
+
+/* SM Small devices (tablets, 768px and up) */
+@media (min-width: 900px) {
+}
+
