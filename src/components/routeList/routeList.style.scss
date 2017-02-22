@@ -61,9 +61,19 @@
 
 	.stopover-list{
 		overflow-y: auto;
+		.mdl-list{
+			padding: 0;
+			margin: 0;
+		}
 		.row{
 			width: 100%;
-			padding-bottom: 0;
+			padding: 0;
+			border-bottom: 1px solid #d9d9d9;
+			margin-left: 0;
+		}
+		.icons-hub{
+			display: flex;
+			justify-content: flex-end;
 		}
 		.location-name{
 			white-space: nowrap;

@@ -19,10 +19,9 @@
             span.mdl-list__item-primary-content
               i.material-icons.mdl-list__item-icon.handle reorder
               span.location-name {{ loc.formatted_address }}
-          .col-lg-1.col-md-1.col-sm-1.col-xs-1
-            .material-icons.mdl-list__item-icon.show-location#ttcenter(@click='showLocation(index)') location_searching
+          .col-lg-3.col-md-3.col-sm-3.col-xs-3.icons-hub
+            i.material-icons.mdl-list__item-icon.show-location#ttcenter(@click='showLocation(index)') location_searching
             .mdl-tooltip(data-mdl-for='ttcenter') Center on Map
-          .col-lg-2.col-md-2.col-sm-2.col-xs-2
-            .material-icons.mdl-list__item-icon.edit-stopover#ttedit(@click='editStopOver(index)') mode_edit
+            i.material-icons.mdl-list__item-icon.edit-stopover#ttedit(@click='editStopOver(index)') mode_edit
             .mdl-tooltip(data-mdl-for='ttedit') Edit
   stop-over-modal
