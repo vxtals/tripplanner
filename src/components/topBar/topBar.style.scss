@@ -1,15 +1,19 @@
-
-
-@media screen and (min-width: 900px){
-	.mdl-layout__header {
-		display: flex;
+.top-bar{
+	@media screen and (min-width: 900px){
+		.mdl-layout__header {
+			display: flex;
+		}
 	}
-}
 
-.mdl-layout__header {
-	position: fixed;
-}
+	.mdl-layout__header {
+		position: fixed;
+	}
 
-.mdl-layout-title{
-	height: 100%;
+	.bar-title{
+		height: 100%;
+	}
+
+	.mdl-layout__drawer.is-visible{
+		width: 345px;
+	}
 }
