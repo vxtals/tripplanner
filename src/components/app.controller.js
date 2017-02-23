@@ -1,4 +1,3 @@
-import NewStage from './newStage/NewStage'
 import MsgToast from './msgToast/MsgToast'
 import TripFooter from './tripFooter/TripFooter'
 import TopBar from './topBar/TopBar'
@@ -7,7 +6,6 @@ export default {
   name: 'app',
   components: {
     TopBar,
-    NewStage,
     MsgToast,
     TripFooter
   },
