@@ -28,6 +28,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.clickable:hover{
+	cursor: pointer;
+}
+
 .center{ text-align: center;}
 .left{ text-align: left;}
 .right{ text-align: right;}
