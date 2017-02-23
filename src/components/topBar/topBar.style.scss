@@ -16,4 +16,63 @@
 	.mdl-layout__drawer.is-visible{
 		width: 345px;
 	}
+
+	.mdl-chip--contact{
+		.material-icons{
+			vertical-align: sub;
+		}
+	}
+
+	.mdl-chip-inverted{
+		padding-left: 15px;
+		padding-right: 0;
+		.mdl-chip__contact{
+			margin-right: 0;
+			margin-left: 8px;
+		}
+	}
+
+	#user-chip{
+		position: relative;
+		.mdl-menu__container{
+			top: 32px !important;
+			left: 0 !important;
+			width: 100% !important;
+			.mdl-menu__outline{
+				width: 100% !important;
+			}
+		}
+		.mdl-menu{
+			width: 100%;
+			li{
+				text-align: center;
+			}
+		}
+		.mdl-menu__outline{
+			overflow: visible;
+			border-radius: 0 0 16px 16px;
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 0 0 rgba(0,0,0,.12);
+		}
+		.mdl-menu__outline::before{
+			content: "";
+			display: block;
+			position: absolute;
+			top: -16px;
+			width: 16px;
+			height: 16px; 
+		    background-color: white;
+           -webkit-mask-image: radial-gradient(circle 18px at 17px -1px, transparent 0, transparent 17px, black 0px);
+		}
+		.mdl-menu__outline::after{
+			content: "";
+			display: block;
+			position: absolute;
+			top: -16px;
+			right:0;
+			width: 16px;
+			height: 16px; 
+		    background-color: white;
+           -webkit-mask-image: radial-gradient(circle 17px at 0 0, transparent 0, transparent 16px, black 0px);
+		}
+	}
 }
