@@ -1,0 +1,48 @@
+.trip-list {
+	.trip-card-container{
+		display: flex;
+		flex-wrap: wrap;
+		width: 100vw;
+		position: absolute;
+		top: 56px;
+		padding: 20px;
+	}
+	.trip-card {
+	  width: 320px;
+	  height: 230px;
+	  margin-left: 15px;
+	  margin-bottom: 15px;
+	}
+	.trip-card > .mdl-card__title {
+	  color: #fff;
+	}
+	.new-trip-card > .mdl-card__title {
+	  background:
+	    url('../../assets/road.jpg') bottom right 15% no-repeat #46B6AC;
+	}
+	.saved-trip-card > .mdl-card__title {
+	  background:
+	    url('../../assets/trip1.jpg') bottom right 15% no-repeat #46B6AC;
+	    background-size: 100% 100%;
+	    .mdl-card__title-text{
+	    	font-weight: bold;
+	    	color: black;
+	    }
+	    .mdl-card__title-text::before{
+	    	display: block;
+    		filter: blur(5px);
+	    }
+	}
+	.trip-card.mdl-card:hover {
+	  cursor: pointer;
+	  transform: translateY(-2px);
+	  transition: transform 0.2s linear;    
+	  box-shadow: 2px 2px 2px 2px grey;
+	}
+	.mdl-card__supporting-text{
+	    height:75px;
+	    overflow-y: hidden;
+	    text-overflow: ellipsis;
+	}
+
+}
