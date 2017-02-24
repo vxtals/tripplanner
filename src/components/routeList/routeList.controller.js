@@ -7,6 +7,7 @@ export default {
   data () {
   	vm = this
     return {
+      stageName: 'Etapa 1',
     	addDisabled: true,
     	previewLocation: null,
     	stageLocations: []

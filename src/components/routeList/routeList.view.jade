@@ -1,7 +1,9 @@
 .route-list
   .list-card.full-height
     .card-title.left.mdl-card__title
-      span Itinerario
+      .mdl-textfield.mdl-js-textfield.stage-name
+          input.mdl-textfield__input(type="text", placeholder="Stage name", v-model='stageName')
+      //- span Itinerario
       button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored(@click='hideRouteList')
             i.material-icons keyboard_arrow_left
     hr

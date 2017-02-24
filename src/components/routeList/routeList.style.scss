@@ -41,6 +41,12 @@
 		color: white;
 		background-color: #3F51B5;
 		justify-content: space-between;
+		.stage-name{
+			width: calc(100% - 70px);
+			input{
+				font-size: 23px;
+			}
+		}
 		button{
 		    height: 100%;
 		    position: absolute;
