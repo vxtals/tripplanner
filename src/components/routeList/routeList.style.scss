@@ -32,6 +32,7 @@
 	}
 
 	.card-title{
+		position: relative;
 		height: 60px;
 		font-size: 20px;
 		text-transform: uppercase;
@@ -40,6 +41,12 @@
 		color: white;
 		background-color: #3F51B5;
 		justify-content: space-between;
+		button{
+		    height: 100%;
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		}
 		button>i{
 			color: white;
 			font-size: 24px;

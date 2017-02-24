@@ -55,7 +55,7 @@
 			transition: visibility 1s, opacity 1s linear;
 		}
 		.expanded-map #map{
-			width: 89vw;
+			width: calc(100vw - 90px);
 			transition: width 1s linear;
 		}
 
@@ -63,9 +63,8 @@
 			transition: width 1s linear;
 		}
 	}
-	/* LG Large devices (large desktops, 1200px and up) */
-	@media (min-width: 1200px) {
-
+	.card-title button>i{
+		transition: transform 0.9s linear;
 	}
 	.route-list-container{
 		z-index: 2;
@@ -75,6 +74,12 @@
 	.hide-list{
 		transform: translateX(-100%);
 		transition: transform 1s linear;
+		.card-title button>i{
+			-ms-transform: rotate(180deg); /* IE 9 */
+		    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+		    transform: rotate(180deg);
+			transition: transform 0.9s linear;
+		}
 	}
 	.hide-button{
 		visibility: hidden;
