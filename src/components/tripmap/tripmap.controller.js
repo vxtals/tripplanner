@@ -1,4 +1,4 @@
-let vm, map, infowindow, searchBox, dirService, dirDisplay, previewMarker
+let vm, map, infowindow, searchBox, dirService, dirDisplay, previewMarker, mapLoaded = false
 let staticMarkers = []
 let locations = []
 export default {
@@ -8,12 +8,18 @@ export default {
     }
   },
   created: function () {
-    window.eventBus.$on('google-maps-loaded', initMap)
     window.eventBus.$on('center-and-show', centerAndShow)
     window.eventBus.$on('remove-preview-marker', removePreviewMarker)
     window.eventBus.$on('update-location-markers', updateLocationMarkers)
     window.eventBus.$on('reload-map', reloadMap)
     registerResizeEvent()
+  },
+  mounted: function () {
+    if (window.google != undefined) {
+      initMap()
+    }else{
+      window.eventBus.$on('google-maps-loaded', initMap)
+    }
   }
 }
 
@@ -26,7 +32,7 @@ function initMap (){
   dirService = new google.maps.DirectionsService
   dirDisplay = new google.maps.DirectionsRenderer({
     map: map
-  })   
+  })
   google.maps.event.addListener(map, 'click', function(event) {
    console.log(event);
   });
