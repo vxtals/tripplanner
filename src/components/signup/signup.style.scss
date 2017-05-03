@@ -1,0 +1,53 @@
+.signup {
+	padding-top: 10vh;
+	text-align: center;
+	top: 56px;
+	.signup-intro{
+		font-size: 22px;
+		color: grey;
+	}
+
+	.signup-card{
+		display: inline-block;
+		padding: 20px 30px 0px 30px;
+		background-color: #eaf6ff;
+		width: 350px;
+		.mdl-card__supporting-text{
+			width: 100%;
+		}
+		.mdl-button{
+			border: 1px solid rgb(33,150,243);
+		    color: rgb(33,150,243);
+		    font-weight: bold;
+		}
+		.mdl-button:hover{
+			border: 1px solid rgb(33,150,243);
+		    background-color: rgb(33,150,243);
+		    color: white;
+		}
+	}
+
+	.signup-icon{
+		background-color: #009688 !important;
+		border-radius: 100px;
+		height: 100px;
+		width: 100px;
+		display: inline-block;
+		i{
+			font-size: 90px;
+    		color: white;
+		}
+	}
+
+	.sign-in-msg{
+		margin-top: 15px;
+	}
+
+	.sign-in-click{
+		color: rgb(33,150,243);
+	}
+
+	.sign-in-click:hover{
+		cursor: pointer;
+	}
+}

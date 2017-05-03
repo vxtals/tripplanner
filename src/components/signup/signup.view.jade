@@ -1,0 +1,21 @@
+.signup
+      p.signup-intro Create a new account.
+      .signup-card.trip-card.mdl-card.mdl-shadow--2dp
+        .signup-icon
+          i.material-icons person
+        .mdl-card__supporting-text
+          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.user-email
+              input.mdl-textfield__input(type="email", v-model='userEmail')
+              label.mdl-textfield__label Email
+          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.user-name
+              input.mdl-textfield__input(type="text", v-model='userName')
+              label.mdl-textfield__label User Name
+          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.user-password
+              input.mdl-textfield__input(type="password", v-model='userPassword')
+              label.mdl-textfield__label Password
+          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.repeat-password
+              input.mdl-textfield__input(type="password", v-model='repeatPassword')
+              label.mdl-textfield__label Repeat
+          button.mdl-button(type='button', @click='signUpUser') Sign Up
+          p.sign-in-msg Do you already have an account? 
+            span.sign-in-click(@click='navigateLogin') Login.
