@@ -12,6 +12,9 @@ export default {
   methods: {
     loginUser: function () {
       window.location.href = '/#/triplist';
+    },
+    navigateSignUp: function () {
+      window.location.href = '/#/signup';
     }
   }
 }
