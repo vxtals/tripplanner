@@ -2,7 +2,7 @@
 	.trip-card-container{
 		display: flex;
 		flex-wrap: wrap;
-		width: 100vw;
+		width: 98vw;
 		position: absolute;
 		top: 56px;
 		padding: 20px;
@@ -13,13 +13,44 @@
 	  margin-left: 15px;
 	  margin-bottom: 15px;
 	}
-	.trip-card > .mdl-card__title {
-	  color: #fff;
+	.new-trip-card{
+		box-shadow: none;
+		border-style: dashed;
+		border-color: grey;
+		text-align: center;
 	}
-	.new-trip-card > .mdl-card__title {
-	  background:
-	    url('../../assets/road.jpg') bottom right 15% no-repeat #46B6AC;
+
+	.new-trip-card{
+		text-align: center;
+		.material-icons{
+			color: grey;
+			font-size: 120px;
+		}
 	}
+
+	.new-trip-card:hover{
+		box-shadow: none !important;
+		background-color: #a7a7a7;
+		.material-icons{
+			color: white;
+		}
+		color: white;
+	}
+
+	.new-trip-card .mdl-card__title{
+		display: inline-block;
+	}
+
+	.new-trip-card .mdl-card__supporting-text{
+		display: inline-block;
+		width: 100%;
+		font-size: 20px;
+	}
+
+	// .new-trip-card > .mdl-card__title {
+	//   background:
+	//     url('../../assets/road.jpg') bottom right 15% no-repeat #46B6AC;
+	// }
 	.saved-trip-card > .mdl-card__title {
 	  background:
 	    url('../../assets/trip1.jpg') bottom right 15% no-repeat #46B6AC;
