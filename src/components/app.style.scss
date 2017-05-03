@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 /* XS Small devices (tablets, 768px and less) */
 @media (max-width: 900px) { 
@@ -21,6 +21,9 @@
 	}
 }
 
+body{
+  font-family: 'Roboto', sans-serif !important;
+}
 
 .app-containter {
   //font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -50,4 +53,8 @@
 
 .wp25{
 	width: 25%;
+}
+
+.mdl-textfield__label:after{
+	bottom: 14px !important;
 }
