@@ -1,0 +1,16 @@
+.login
+      p.login-intro Login with your TripPlanner account.
+      .login-card.trip-card.mdl-card.mdl-shadow--2dp
+        .login-icon
+          i.material-icons person
+        //-   h2.mdl-card__title-text LOGIN
+        .mdl-card__supporting-text
+          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.user-name
+              input.mdl-textfield__input(type="text", v-model='userName')
+              label.mdl-textfield__label User Name
+          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.user-password
+              input.mdl-textfield__input(type="password", v-model='userPassword')
+              label.mdl-textfield__label Password
+          button.mdl-button(type='button', @click='loginUser') Login
+          p.sign-up-msg Do you need an account? 
+            span.sign-up-click Sign up.

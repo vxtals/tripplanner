@@ -1,5 +1,6 @@
 import NewStage from './components/newStage/NewStage'
 import TripList from './components/tripList/TripList'
+import Login from './components/login/Login'
 
 const routes = [
   {
@@ -13,6 +14,10 @@ const routes = [
   {
     path: '/triplist',
     component: TripList
+  },
+  {
+    path: '/login',
+    component: Login
   }
 ]
 
