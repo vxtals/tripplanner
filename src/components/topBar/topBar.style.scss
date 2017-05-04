@@ -3,6 +3,23 @@
 		.mdl-layout__header {
 			display: flex;
 		}
+		.mdl-layout__drawer{
+			top: 65px;
+			height: -webkit-calc(100vh - 65px);
+			height:    -moz-calc(100vh - 65px);
+			height:         calc(100vh - 65px);
+		}
+	}
+	@media screen and (max-width: 900px){
+		.mdl-layout__header {
+			display: flex;
+		}
+		.mdl-layout__drawer{
+			top: 56px;
+			height: -webkit-calc(100vh - 56px);
+			height:    -moz-calc(100vh - 56px);
+			height:         calc(100vh - 56px);
+		}
 	}
 
 	.mdl-layout__header {
@@ -11,13 +28,6 @@
 
 	.bar-title{
 		height: 100%;
-	}
-
-	.mdl-layout__drawer{
-		top: 65px;
-		height: -webkit-calc(100vh - 65px);
-		height:    -moz-calc(100vh - 65px);
-		height:         calc(100vh - 65px);
 	}
 
 	.mdl-layout__drawer.is-visible{

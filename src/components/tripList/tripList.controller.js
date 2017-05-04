@@ -4,5 +4,9 @@ export default {
     return {
 
     }
+  },
+  methods: {
+    navigateTripSummary: () => 
+      window.location.href = '/#/tripsummary'
   }
 }

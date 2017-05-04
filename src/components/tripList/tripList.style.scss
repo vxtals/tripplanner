@@ -4,76 +4,70 @@
 		flex-wrap: wrap;
 		width: 98vw;
 		position: absolute;
-		top: 56px;
-		padding: 20px;
+		top: 64px;
+		padding: 25px;
 	}
+
 	.trip-card {
 	  width: 320px;
 	  height: 230px;
-	  margin-left: 15px;
+	  margin-left: 25px;
 	  margin-bottom: 15px;
 	}
-	.new-trip-card{
-		box-shadow: none;
-		border-style: dashed;
-		border-color: grey;
-		text-align: center;
-	}
 
-	.new-trip-card{
-		text-align: center;
-		.material-icons{
-			color: grey;
-			font-size: 120px;
-		}
-	}
-
-	.new-trip-card:hover{
-		box-shadow: none !important;
-		background-color: #a7a7a7;
-		.material-icons{
-			color: white;
-		}
-		color: white;
-	}
-
-	.new-trip-card .mdl-card__title{
-		display: inline-block;
-	}
-
-	.new-trip-card .mdl-card__supporting-text{
-		display: inline-block;
-		width: 100%;
-		font-size: 20px;
-	}
-
-	// .new-trip-card > .mdl-card__title {
-	//   background:
-	//     url('../../assets/road.jpg') bottom right 15% no-repeat #46B6AC;
-	// }
-	.saved-trip-card > .mdl-card__title {
-	  background:
-	    url('../../assets/trip1.jpg') bottom right 15% no-repeat #46B6AC;
-	    background-size: 100% 100%;
-	    .mdl-card__title-text{
-	    	font-weight: bold;
-	    	color: black;
-	    }
-	    .mdl-card__title-text::before{
-	    	display: block;
-    		filter: blur(5px);
-	    }
-	}
 	.trip-card.mdl-card:hover {
 	  cursor: pointer;
 	  transform: translateY(-2px);
 	  transition: transform 0.2s linear;    
 	  box-shadow: 2px 2px 2px 2px grey;
 	}
+	
 	.mdl-card__supporting-text{
 	    height:75px;
 	    overflow-y: hidden;
 	    text-overflow: ellipsis;
+	}
+
+	.new-trip-card{
+		box-shadow: none;
+		border-style: dashed;
+		border-color: grey;
+		text-align: center;
+		text-align: center;
+		.material-icons{
+			color: grey;
+			font-size: 120px;
+		}
+		&:hover{
+			box-shadow: none !important;
+			background-color: #a7a7a7;
+			.material-icons{
+				color: white;
+			}
+			color: white;
+		}
+		.mdl-card__title{
+			display: inline-block;
+		}
+		.mdl-card__supporting-text{
+			display: inline-block;
+			width: 100%;
+			font-size: 20px;
+		}
+	}
+
+	.saved-trip-card > .mdl-card__title {
+		background:
+		url('../../assets/trip1.jpg') bottom right 15% no-repeat #46B6AC;
+		background-size: 100% 100%;
+		.mdl-card__title-text{
+			font-weight: bold;
+			color: black;
+			&::before{
+				display: block;
+				filter: blur(5px);
+			}
+		}
 	}
 
 }

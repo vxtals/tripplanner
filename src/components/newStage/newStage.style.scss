@@ -1,5 +1,6 @@
 .newStage {
-	/* XS Small devices (tablets, 768px and less) */
+	padding-top: 20px;
+	/* Small screen*/
 	@media (max-width: 900px) { 
 		.route-list-container{
 			position: absolute;
@@ -35,7 +36,7 @@
 			}
 		}
 	}
-	/* SM Small devices (tablets, 768px and up) */
+	/* Large screen */
 	@media (min-width: 900px) {
 		.list-button{
 			position: absolute;
@@ -63,6 +64,7 @@
 			transition: width 1s linear;
 		}
 	}
+
 	.card-title button>i{
 		transition: transform 0.9s linear;
 	}
