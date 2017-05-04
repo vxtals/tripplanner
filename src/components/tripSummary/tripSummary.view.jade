@@ -1,0 +1,49 @@
+.tripSummary
+  .stageList(v-bind:class="{ 'hide-stages': !showStages }")
+    p.trip-name {{tripName}}
+      button.mdl-button.edit-button.show-hide-stages(type='button', @click='showStages = !showStages')
+        span {{showStages ? 'Hide Stages' : 'Show Stages'}}
+    //- ul.demo-list-icon.mdl-list(v-sortable="{ handle: '.handle', onEnd: reorder }")
+    ul.demo-list-icon.mdl-list
+      li.mdl-list__item.row(v-for='(stage, index) in stages', :key='stage.id')
+        .col-lg-8.col-md-7.col-sm-6.col-xs-6
+          span.mdl-list__item-primary-content
+            i.material-icons.mdl-list__item-icon.handle explore
+            span.stage-name {{ stage.name }}
+        .col-lg-4.col-md-5.col-sm-6.col-xs-6.icons-hub
+          //- button.mdl-button.edit-button(type='button') Edit
+          //- button.mdl-button.remove-button(type='button') Remove
+          i.material-icons.mdl-list__item-icon.delete-stage(v-bind:id='"deleteIcon" + index', @click='showLocation(index)') delete_forever
+          .mdl-tooltip(v-bind:data-mdl-for='"deleteIcon" + index') Delete stage
+          i.material-icons.mdl-list__item-icon.edit-stage(v-bind:id='"editicon" + index', @click='navigateStage') mode_edit
+          .mdl-tooltip(v-bind:data-mdl-for='"editicon" + index') Edit
+    button.mdl-button.new-button(type='button') New Stage
+
+  .tripData
+    trip-map
+    .tripInfo
+      .info-row
+        .date-group
+          span.tag Start date:
+          input.dateInput(type="date", v-model="startDate")
+        .date-group
+          span.tag Finish date:
+          input.dateInput(type="date", v-model="finishDate")
+      .info-row
+        span.tag Participants:
+        span(v-for='(participant, index) in participants') 
+          span(v-if='!participant.user') &nbsp{{participant.name}}
+          span.link(v-else @click='openUser(participant.name)') &nbsp@{{participant.name}}
+          span(v-if='index != participants.length - 1') ,
+      .info-row
+        span.tag Visited countries:
+        span(v-for='(country, index) in countries') 
+          span &nbsp{{country}}
+          span(v-if='index != countries.length - 1') ,
+      .info-row
+        .info-group
+          span.tag Number of stages: 
+          span &nbsp5
+        .info-group
+          span.tag Average stage distance:
+          span &nbsp437 km

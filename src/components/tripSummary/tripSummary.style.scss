@@ -1,0 +1,165 @@
+.tripSummary {
+	padding-top: 20px;
+	/* Small screens */
+	@media (max-width: 900px) { 
+		.stageList{
+			padding-left: 10px;
+			width: -webkit-calc(100vw - 16px);
+			width:    -moz-calc(100vw - 16px);
+			width:         calc(100vw - 16px);
+			min-height: 40px;
+			display: inline-block;
+		}
+		.tripData{
+			width: -webkit-calc(100vw - 16px);
+			width:    -moz-calc(100vw - 16px);
+			width:         calc(100vw - 16px);
+			height: auto;
+			display: inline-block;
+		}
+		.tripmap{
+			#map{
+				height: 40vh;
+				min-height: 40vh; 
+			}
+		}
+	}
+
+	/* Large screens */
+	@media (min-width: 900px) {
+		.stageList{
+			width: -webkit-calc(25vw - 25px);
+			width:    -moz-calc(25vw - 25px);
+			width:         calc(25vw - 25px);
+			min-height: 40px;
+			display: inline-block;
+		}
+		.tripData{
+			width: -webkit-calc(75vw - 25px);
+			width:    -moz-calc(75vw - 25px);
+			width:         calc(75vw - 25px);
+			height: auto;
+			display: inline-block;
+		}
+		.tripmap{
+			width: 80%;
+			display: inline-block;
+			#map{
+				height: 45vh;
+				min-height: 280px; 
+			}
+		}
+	}
+
+	.stageList{
+		vertical-align: top;
+		.row{
+			margin-right: 0;
+		}
+	}
+
+	.trip-name{
+		font-weight: bold;
+		font-size: 25px;
+		margin-bottom: 15px;
+	}
+
+	.tripData{
+		vertical-align: top;
+		text-align: center;
+	}
+
+	.date-group{
+		display: inline-block;
+		width: 260px;
+		span{
+			margin-right: 10px;
+		}
+	}
+	.tripInfo{
+		display: inline-block;
+		width: 80%;
+		padding: 20px 0 0 10px;
+		text-align: left;
+		.tag{
+			font-size: 15px;
+			font-weight: bold;
+		}
+	}
+	.info-row{
+		height: 40px;
+	}
+
+	.info-group{
+		display: inline-block;
+		margin-right: 30px;
+	}
+
+	.stageList{
+		position: relative;
+		overflow-y: hidden;
+		max-height: 1500px;
+  		transition: max-height 1s;
+
+		.mdl-list{
+			padding: 0;
+			margin: 0;
+		}
+		.stage-name{
+			white-space: nowrap;
+			text-align: left;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			display: inline;
+			height: 20px;
+		}
+		.icons-hub{
+			padding-left: 0;
+		}
+		.icons-hub i{
+			margin-right: 5px;
+			height: 30px;
+			&:hover{
+				cursor: pointer;
+			}
+			&.delete-stage:hover{
+				color: #ea4335;
+			}
+			&.edit-stage:hover{
+				color: #2196f3;
+			}
+		}
+		.handle{
+			margin-right: 10px;
+			height: 30px;
+		}
+		.edit-stopover:hover{
+			color: #3F51B5;
+			cursor: pointer;
+			font-size: 26px;
+		}
+		.show-location:hover{
+			color: #3F51B5;
+			cursor: pointer;
+			font-size: 26px;
+		}
+		.new-button{
+		    left: 50%;
+		    transform: translateX(-50%);
+		    height: 40px;
+		    margin-bottom: 10px;
+		}
+	}
+
+	.hide-stages{
+		max-height: 40px;
+  		transition: max-height 0.7s;
+	}
+
+	.show-hide-stages{
+		margin-left: 20px;
+		height: 30px;
+		line-height: 27px;
+		font-size: 10px;
+	}
+}
