@@ -7,17 +7,25 @@
       // Add spacer, to align navigation to the right
       .mdl-layout-spacer
       nav.mdl-navigation
-        span.mdl-.mdl-chip.mdl-chip--contact.mdl-chip-inverted.clickable(id='user-chip')
-          ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect(for='user-chip')
-            li.mdl-menu__item Settings
-            li.mdl-menu__item Logout
-          span.mdl-chip__text Víctor Portals Lorenzo
+        //- span.mdl-.mdl-chip.mdl-chip--contact.mdl-chip-inverted.clickable(id='user-chip')
+        //-   ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect(for='user-chip')
+        //-     li.mdl-menu__item Settings
+        //-     li.mdl-menu__item Logout
+        //-   span.mdl-chip__text Víctor Portals Lorenzo
+        //-   span.mdl-chip__contact.mdl-color--teal.mdl-color-text--white
+        //-     i.material-icons person
+        span.mdl-.mdl-chip.mdl-chip--contact.mdl-chip-inverted.clickable(id='user-chip', @click="navigateLogin")
+          span.mdl-chip__text Login
           span.mdl-chip__contact.mdl-color--teal.mdl-color-text--white
             i.material-icons person
   .mdl-layout__drawer(v-autofold="1")
     //- span.mdl-layout-title Menu
     nav.mdl-navigation
-      a.mdl-navigation__link(href='/#/login') Login
-      a.mdl-navigation__link(href='/#/triplist') My Trips
-      a.mdl-navigation__link(href='/#/tripsummary') Trip Summary
-      a.mdl-navigation__link(href='/#/newstage') New Stage
+      a.mdl-navigation__link.my-trips-link(href='/#/triplist')
+        i.material-icons home
+        span &nbsp My Trips
+      hr
+      a.mdl-navigation__link.trip-summary-link(href='/#/tripsummary') Route 66
+      a.mdl-navigation__link.stage-link(href='/#/stage') 
+        i.material-icons explore
+        span &nbsp Stage 1

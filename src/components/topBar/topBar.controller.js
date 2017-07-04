@@ -18,6 +18,9 @@ export default {
         })
       }
     }
+  },
+  methods: {
+    navigateLogin: () => window.location.href = '/#/login'
   }
 }
 
