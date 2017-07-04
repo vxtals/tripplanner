@@ -1,0 +1,34 @@
+.stageModal
+  dialog#dialog.mdl-dialog
+    .mdl-dialog__content(ref='dialog')
+      p.stage-modal-intro Introduce new stage data.
+      form
+        .row
+          .col-xs-offset-1.col-xs-9.stage-name
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.wp100
+              input#stop-alias.mdl-textfield__input(type='text', v-model='stageName')
+              label.mdl-textfield__label Stage Name
+            //- mdl-textfield.wp100(type='text', :floating-label='stopover.locationName', v-model='stopover.alias')
+        .row
+          .col-xs-offset-1.col-xs-4.time-group
+            label Start time:
+            span.line-wrapper
+              input.dateInput(type="date", v-model="startDate.date")
+          .col-xs-4.time-group 
+            label Finish time:
+            span.line-wrapper
+              input.dateInput(type="date", v-model="finishDate.date")
+          .col-xs-3.date-locker
+            i.material-icons.clickable#locked(v-if="lockedDate", @click='unlockDates') lock_outline
+            .mdl-tooltip(v-if="lockedDate",data-mdl-for='locked') Unlock dates
+            i.material-icons.clickable#unlocked(v-if="!lockedDate", @click='lockDates') lock_open
+            .mdl-tooltip(v-if="!lockedDate",data-mdl-for='unlocked') Lock dates
+
+        .row
+          .col-xs-offset-1.col-xs-9
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.comments
+              textarea.mdl-textfield__input.alias-name.wp100(type='text', floating-label='Comments', v-model='comments', rows="8")
+              label.mdl-textfield__label() Comments
+    .mdl-dialog__actions
+      button.mdl-button.new-button(type='button', @click='navigateStage') Save
+      button.mdl-button.remove-button(type='button', @click='closeModal') Cancel

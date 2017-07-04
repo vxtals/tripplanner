@@ -1,4 +1,4 @@
-.route-list
+.stopover-list
   .list-card.full-height
     .card-title.left.mdl-card__title
       .mdl-textfield.mdl-js-textfield.stage-name
@@ -14,7 +14,7 @@
           button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored(v-bind:disabled="addDisabled", @click='addLocation(previewLocation)')
             i.material-icons add
     hr
-    .stopover-list
+    .stopover-items
       ul.demo-list-icon.mdl-list(v-sortable="{ handle: '.handle', onEnd: reorder }")
         li.mdl-list__item.row(v-for='(loc, index) in stageLocations', :key='loc.place_id')
           .col-lg-9.col-md-9.col-sm-9.col-xs-9
@@ -26,4 +26,4 @@
             .mdl-tooltip(data-mdl-for='ttcenter') Center on Map
             i.material-icons.mdl-list__item-icon.edit-stopover#ttedit(@click='editStopOver(index)') mode_edit
             .mdl-tooltip(data-mdl-for='ttedit') Edit
-  stop-over-modal
+  stopover-modal

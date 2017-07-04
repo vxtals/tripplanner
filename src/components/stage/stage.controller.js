@@ -1,11 +1,11 @@
-import RouteList from '../routeList/RouteList'
-import TripMap from '../tripMap/TripMap'
+import StopoverList from './stopoverList/StopoverList'
+import TripMap from '../reusable/tripMap/TripMap'
 let vm
 
 export default {
-  name: 'new-stage',
+  name: 'stage',
   components: {
-    RouteList,
+    StopoverList,
     TripMap
   },
   data () {

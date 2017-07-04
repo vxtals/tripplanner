@@ -1,9 +1,9 @@
-import LocationSearchBox from '../locationSearchBox/LocationSearchBox'
-import StopOverModal from '../stopOverModal/StopOverModal'
+import LocationSearchBox from '../../reusable/locationSearchBox/LocationSearchBox'
+import StopoverModal from '../stopoverModal/StopoverModal'
 let vm
 
 export default {
-  name: 'route-list',
+  name: 'stopover-list',
   data () {
   	vm = this
     return {
@@ -53,6 +53,6 @@ export default {
   },
   components: {
   	LocationSearchBox,
-    StopOverModal
+    StopoverModal
   }
 }

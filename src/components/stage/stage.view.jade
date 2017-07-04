@@ -1,7 +1,7 @@
-.newStage
+.stage
   .row
     .route-list-container.col-lg-3.col-md-4.col-sm-4.center(:class='{"hide-list" : !showList}')
-      route-list(@hide-route-list='switchRouteList')
+      stopover-list(@hide-route-list='switchRouteList')
     .list-button(:class='{"hide-button" : showList}')
       button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored(@click='switchRouteList')
         i.material-icons keyboard_arrow_right

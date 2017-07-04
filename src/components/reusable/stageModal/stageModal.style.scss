@@ -1,0 +1,67 @@
+.stageModal {
+	/* XS Small devices (tablets, 768px and less) */
+	@media (max-width: 900px) {	
+		.mdl-dialog{
+			width: 100vw;
+			height: 100vh;
+			position: absolute;
+			top: 0;
+			.mdl-dialog__actions{
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+		}
+	}
+	/* LG Large devices (large desktops, 1200px and up) */
+	@media (min-width: 900px) {	
+		.mdl-dialog{
+			width: 452px;
+		}
+	}
+
+	// ALL
+
+	.mdl-dialog{
+		background-color: #eaf6ff;
+		padding: 0;
+		.mdl-dialog__content{
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	.stage-modal-intro{
+		margin-left: 20px;
+		font-size: 22px;
+		color: grey;
+	}
+	.stage-name{
+		text-align: left;
+	}
+	.time-group{
+		text-align: left;
+		label{
+			margin-right: 10px;
+		}
+	}
+	.date-locker{
+		height: 40px;
+		padding-top: 20px; 
+		i:hover{
+			color: #1e87da;
+		}
+	}
+	.line-wrapper{
+		display: inline-block;
+		width: 98px;
+	}
+	.comments{
+		width: 100%;
+	}
+	.type-text{
+		text-transform: none;
+		display: block;
+		font-size: 15px;
+		line-height: 15px;
+	}
+}

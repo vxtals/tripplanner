@@ -1,4 +1,4 @@
-.route-list{
+.stopover-list{
 
 	/* XS Small devices (tablets, 768px and less) */
 	@media (max-width: 900px) { 
@@ -7,7 +7,7 @@
 			top: 56px;
 			left: 0;
 		}
-		.stopover-list{
+		.stopover-items{
 			max-height: 40vh;
 		}
 	}
@@ -72,7 +72,7 @@
 		}
 	}
 
-	.stopover-list{
+	.stopover-items{
 		overflow-y: auto;
 		.mdl-list{
 			padding: 0;

@@ -1,7 +1,7 @@
 let vm
 
 export default {
-  name: 'stop-over-modal',
+  name: 'stopover-modal',
   props: {
   	editable: {
   		type: Boolean,
