@@ -17,7 +17,7 @@
           .mdl-tooltip(v-bind:data-mdl-for='"deleteIcon" + index') Delete stage
           i.material-icons.mdl-list__item-icon.edit-stage(v-bind:id='"editicon" + index', @click='navigateStage') mode_edit
           .mdl-tooltip(v-bind:data-mdl-for='"editicon" + index') Edit
-    button.mdl-button.new-button(type='button') New Stage
+    button.mdl-button.new-button(type='button', @click='newStage') New Stage
 
   .tripData
     trip-map
@@ -47,3 +47,4 @@
         .info-group
           span.tag Average stage distance:
           span &nbsp437 km
+  stage-modal

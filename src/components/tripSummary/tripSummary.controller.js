@@ -1,10 +1,12 @@
-import TripMap from '../tripMap/TripMap'
+import TripMap from '../reusable/tripMap/TripMap'
+import StageModal from '../reusable/stageModal/StageModal'
 let vm
 
 export default {
   name: 'trip-summary',
   components: {
-    TripMap
+    TripMap,
+    StageModal
   },
   data () {
     vm = this
@@ -31,6 +33,8 @@ export default {
         vm.stages.splice(newIndex, 0, movedItem)
     },
     navigateStage: () => 
-      window.location.href = '/#/newstage'
+      window.location.href = '/#/stage',
+    newStage: () =>  
+      window.eventBus.$emit('editStage')
   }
 }
