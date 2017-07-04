@@ -64,9 +64,13 @@ body{
 	bottom: 14px !important;
 }
 
+i{
+	outline: none; 
+}
+
 input[type="date"]{
 	border: none;
-	border-bottom-style: hidden;
+	border-bottom: 1px solid #ced8e0;
 	width: 110px;
 	position: relative;
 	background-color: transparent;
