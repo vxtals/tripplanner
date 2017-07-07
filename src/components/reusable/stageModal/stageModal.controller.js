@@ -1,7 +1,5 @@
 let vm
 
-require('material-design-lite')
-
 export default {
   name: 'stage-modal',
   props: {
