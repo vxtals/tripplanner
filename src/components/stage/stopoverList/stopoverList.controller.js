@@ -13,8 +13,29 @@ export default {
     	stageLocations: []
     }
   },
+  created: function () {
+    // Get locations window.eventBus.$on('google-maps-loaded', vm.loadLocations)
+  },
   methods: {
-  	enableAdd: function (location) { 
+  	loadLocation: function(placeId){
+      let geocoder = new google.maps.Geocoder;
+      geocoder.geocode({'placeId': placeId}, function(results, status) {
+        if (status === 'OK') {
+          if (results[0]) {
+            // map.setZoom(11);
+            // map.setCenter(results[0].geometry.location);
+            console.log(results[0]);
+            vm.stageLocations.push(results[0]);
+            vm.updateLocations();
+          } else {
+            window.alert('No results found');
+          }
+        } else {
+          window.alert('Geocoder failed due to: ' + status);
+        }
+      });
+    },
+    enableAdd: function (location) { 
   		vm.addDisabled = false
   		vm.previewLocation = location[0] 
   		window.eventBus.$emit('center-and-show', vm.previewLocation.geometry.location)
