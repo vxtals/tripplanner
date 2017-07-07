@@ -5,7 +5,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './components/App'
 import routes from './routes.js'
-// import VueMdl from 'vue-mdl'
+import MdlPlugin from './plugins/MdlPlugin.js'
 import Sortable from 'sortablejs'
 
 window._ = require('lodash')
@@ -19,6 +19,7 @@ Vue.directive('sortable', {
 })
 
 Vue.use(VueRouter)
+Vue.use(MdlPlugin)
 
 /* eslint-disable no-new */
 // New vue instance to be used as event bus
